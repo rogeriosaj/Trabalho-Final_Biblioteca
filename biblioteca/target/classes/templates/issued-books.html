@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Issued Books</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Livros emprestados</h1>
+    <div>
+        <table>
+            <tr>
+                <th>Título</th>
+                <th>Emprestado para</th>
+                <th>Data de devolução prevista</th>
+            </tr>
+            <tr th:each="book : ${books}">
+                <td th:text="${book.title}"></td>
+                <td th:text="${book.issuedTo.name}"></td>
+                <td th:text="${book.dueDate}"></td>
+            </tr>
+        </table>
+    </div>
+    <a href="/">Home</a>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Issued Books</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Livros emprestados</h1>
+    <div>
+        <table>
+            <tr>
+                <th>Título</th>
+                <th>Emprestado para</th>
+            </tr>
+            <tr th:each="book : ${books}">
+                <td th:text="${book.title}"></td>
+                <td th:text="${book.issuedTo.name}"></td>
+            </tr>
+        </table>
+    </div>
+    <a href="/">Home</a>
+</body>
+</html> -->

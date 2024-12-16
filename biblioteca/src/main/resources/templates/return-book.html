@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Return a Book</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Devolução</h1>
+    <div>
+        <form action="#" th:action="@{/library/return-book}" method="post">
+            <label for="bookId">ID livro:</label>
+            <input type="number" id="bookId" name="bookId"/><br>
+            <label for="memberId">ID aluno:</label>
+            <input type="number" id="memberId" name="memberId"/><br>
+            <input type="submit" value="Return Book"/>
+        </form>
+    </div>
+    <a href="/">Home</a>
+</body>
+</html>
+
+

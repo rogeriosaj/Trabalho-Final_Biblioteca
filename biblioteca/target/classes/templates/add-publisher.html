@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Publisher</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body >
+    <h1 >Adicionar editora</h1>
+    <div>
+        <form action="#" th:action="@{/library/add-publisher}" method="post">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name"><br>
+            <input type="submit" value="Adicionar editora">
+        </form>
+    </div>
+    <a href="/">Home</a>
+</body>
+</html>

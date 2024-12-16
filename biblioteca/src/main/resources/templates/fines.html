@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Fines</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Débitos</h1>
+    <div>
+        <table>
+            <tr>
+                <th>Título</th>
+                <th>Valor (R$)</th>
+            </tr>
+            <tr th:each="entry : ${fines}">
+                <td th:text="${entry.key}"></td>
+                <td th:text="${entry.value}"></td>
+            </tr>
+        </table>
+    </div>
+    <a href="/">Home</a>
+</body>
+</html>

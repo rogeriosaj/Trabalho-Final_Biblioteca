@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add a New Book</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Adicionar livro</h1>
+    <div>
+        <form action="#" th:action="@{/library/add-book}" th:object="${book}" method="post">
+            <label for="title">Titulo:</label>
+            <input type="text" id="title" name="title" th:field="*{title}"/><br>
+            <label for="authorId">Autor:</label>
+            <select id="authorId" name="authorId">
+                <option th:each="author : ${authors}" th:value="${author.id}" th:text="${author.name}"></option>
+            </select><br>
+            <label for="publisherId">Editora:</label>
+            <select id="publisherId" name="publisherId">
+                <option th:each="publisher : ${publishers}" th:value="${publisher.id}" th:text="${publisher.name}"></option>
+            </select><br>
+            <input type="submit" value="Adicionar"/>
+        </form>
+    </div>
+    <a href="/">Home</a>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add a New Book</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Adicionar livro</h1>
+    <div>
+        <form action="#" th:action="@{/library/add-book}" th:object="${book}" method="post">
+            <label for="title">Titulo:</label>
+            <input type="text" id="title" name="title" th:field="*{title}"/><br>
+            <label for="author">Autor:</label>
+            <input type="text" id="author" name="author" th:field="*{author}"/><br>
+            <input type="submit" value="Adicionar"/>
+        </form>
+    </div>
+    <a href="/">Home</a>
+</body>
+</html> -->
