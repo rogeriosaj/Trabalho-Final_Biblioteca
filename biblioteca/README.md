@@ -51,6 +51,14 @@ Inclui todas as entidades do sistema e suas relações, além da integração do
 - **Devolução de Livro**: Mostra o fluxo de interação ao devolver um livro.
 ![Diagrama de Sequência - Devolução](/biblioteca/images/return.png)
 
+## Discussão sobre custo para o suporte de outro SGBD
+O custo para que o projeto suporte outro tipo de Sistema de Gerenciamento de Banco de Dados (SGBD) como mecanismo de armazenamento persistente está relacionado à fatores como fatores como o tempo de desenvolvimento, custo de implementação, manutenção e treinamento.
+
+Para começar, seria necessário adaptar o arquivo **pom.xml**, especificando qual banco de dados seria utilizado e incluir suas dependências; além de atualizar o arquivo **application.properties** refletindo as informações do banco, como URL, senha, usuário, etc.
+
+Após isso, seria necessário migrar o banco já existente para o novo, adequar o código para que haja compatibilidade e também o ambiente de produção, caso esse projeto fosse algo comercial ou de "uso real". Também seria necessário levar em consideração os custos específicos que cada banco possui e o aprendizado das pessoas responsáveis por manter o sistema.
+
+Ou seja, os custos seriam mistos, não só financeiros, relativos à adequação do código, migração do banco já existente e treinamento das pessoas responsáveis pelo gerenciamento do sistema.
 ## Como Executar
 1. **Pré-requisitos**: Certifique-se de ter Java e Maven instalados.
 2. **Clonar o Repositório**: 

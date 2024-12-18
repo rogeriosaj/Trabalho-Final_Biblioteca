@@ -239,13 +239,13 @@ public class LibraryService {
 
             return true;
         }
-        return false; // Book is not available or member is not found
+        return false;
     }
 
     private LocalDate calculateDueDate(Member member) {
         List<Loan> loans = loanDAO.findByMember(member);
 
-        LocalDate maxDueDate = LocalDate.now().plusDays(7); // Default loan period of 14 days
+        LocalDate maxDueDate = LocalDate.now().plusDays(7);
 
         if (loans.size() >= 3) {
             int additionalDays = (loans.size() - 2) * 2;
@@ -282,7 +282,7 @@ public class LibraryService {
                 if (book.getDueDate() != null && book.getIssueDate() != null) {
                     long daysOverdue = ChronoUnit.DAYS.between(book.getDueDate(), LocalDate.now());
                     if (daysOverdue > 0) {
-                        long fine = daysOverdue * 10; // Assuming a fine of 10 units per day
+                        long fine = daysOverdue * 10;
                         fines.put(book.getTitle(), fine);
                     }
                 }
